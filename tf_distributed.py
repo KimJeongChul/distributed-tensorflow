@@ -10,7 +10,7 @@ workers = ["10.0.1.3:2222","10.0.1.4:2222","10.0.1.5:2222","10.0.1.6:2222","10.0
 cluster = tf.train.ClusterSpec({"ps":parameter_servers, "worker":workers})
 
 # input flags
-tf.app.flags.DEFINE_string("job_name", "worker", "Either 'ps' or 'worker'")
+tf.app.flags.DEFINE_string("job_name", "ps", "Either 'ps' or 'worker'")
 tf.app.flags.DEFINE_integer("task_index", 0, "Index of task within the job")
 FLAGS = tf.app.flags.FLAGS
 # start a server for a specific task
