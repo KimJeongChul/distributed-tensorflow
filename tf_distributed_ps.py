@@ -107,7 +107,7 @@ elif FLAGS.job_name == "worker":
                 batch_x, batch_y = mnist.train.next_batch(batch_size)
 
                 # perform the operations we defined earlier on batch
-                _, cost, summary, step = sess.run(train_op, cross_entropy, summary_op, global_step], feed_dict={x: batch_x, y_: batch_y})
+                _, cost, summary, step = sess.run([train_op, cross_entropy, summary_op, global_step], feed_dict={x: batch_x, y_: batch_y})
                 writer.add_summary(summary, step)
 
                 count += 1
